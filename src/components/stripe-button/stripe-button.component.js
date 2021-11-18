@@ -18,7 +18,7 @@ const StripeCheckoutButton = ({ price}) => {
      name='CRWN Clothing Ltd.'
      billingAddress
      shippingAddress
-     image={Logo}  
+     image={<Logo/>}  
      description={`Your total is $${price}`}
      amount={priceForStripe}
      paneLabel='Pay Now'
