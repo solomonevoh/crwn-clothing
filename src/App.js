@@ -9,15 +9,13 @@ import CheckoutPage from './pages/checkout/checkout.component';
 
 import Header from './components/header/header.component';
 
-import { auth, createUserProfileDocument, snapShot  } from  './firebase/firebase.utils';
-import  { connect } from 'react-redux';
+import { auth, createUserProfileDocument, snapShot } from  './firebase/firebase.utils';
+import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { setCurrentUser} from './redux/user/user.actions';
 import { selectCurrenUser } from './redux/user/user.selector';
 
 class App extends React.Component {
-
-
   unsubscribeFromAuth = null;
 
   componentDidMount() {
