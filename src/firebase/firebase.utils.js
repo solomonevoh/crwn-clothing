@@ -76,10 +76,11 @@ return transformedCollection.reduce((accumulator, collection) => {
 
 export const auth = getAuth();
 export const snapShot = onSnapshot;
+export const signinWithPopup = signInWithPopup;
 
 
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = () => signInWithPopup(auth, provider);
+export const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithGoogle = () => signInWithPopup(auth, googleProvider);
 
 export default firebase;
