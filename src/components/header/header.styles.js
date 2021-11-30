@@ -27,12 +27,13 @@ export const OptionsContainer = styled.div`
 
 export const ProfileName = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 24px;
+  left: 50px;
+  width: auto;
+
   margin-right: 10px;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 18px;
   cursor: none;
 `;
 
