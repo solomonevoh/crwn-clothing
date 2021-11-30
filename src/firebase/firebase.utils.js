@@ -43,7 +43,7 @@ const config = {
         console.log('Error creating user', error.message);
       }
     }
-    return userRef;
+    return {...docSnap.data(), id: docSnap.id};
   };
 
 export const addCollectionAndDocuments = async(collectionKey, objectsToAdd) => {
@@ -80,9 +80,9 @@ export const getCurrentUser = () => {
     const unsubscribe = auth.onAuthStateChanged(userAuth => {
       unsubscribe();
       resolve(userAuth);
-    }, reject)
+    }, reject);
   });
-}
+};
 
 export const auth = getAuth();
 export const snapShot = onSnapshot;

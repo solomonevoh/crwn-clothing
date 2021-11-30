@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 export const HeaderContainer = styled.div`
   height: 70px;
   width: 100%;
+  margin: 10px 0;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
@@ -21,6 +22,18 @@ export const OptionsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  position: relative;
+`;
+
+export const ProfileName = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: none;
 `;
 
 export const OptionLink = styled(Link)`
