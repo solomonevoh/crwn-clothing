@@ -8,24 +8,15 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import CheckoutPage from './pages/checkout/checkout.component';
 
 import Header from './components/header/header.component';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrenUser } from './redux/user/user.selector';
 import { checkUserSession } from './redux/user/user.actions';
 
-class App extends React.Component {
-  unsubscribeFromAuth = null;
+const App = () => {
+  const currentUser = useSelector(selectCurrenUser);
+    console.log(currentUser);
 
-  componentDidMount() {
-    const { checkUserSession } = this.props;
-    checkUserSession();
-  }
-
-  componenetWillUnmount(){
-    this.unsubscribeFromAuth();
-  }
-
-  render(){
   return (
   <div>
     <Header />
@@ -37,7 +28,7 @@ class App extends React.Component {
         exact
         path='/signin'
         render={() =>
-          this.props.currentUser ? (
+          currentUser ? (
             <Redirect to='/' />
           ) : (
             <SignInAndSignUpPage/>
@@ -49,7 +40,6 @@ class App extends React.Component {
   </div>
   );
 }
-}
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrenUser
@@ -60,7 +50,4 @@ const mapDispatchToProps = dispatch => ({
   checkUserSession: () => dispatch(checkUserSession())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default App;
