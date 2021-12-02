@@ -28,9 +28,10 @@ export const OptionsContainer = styled.div`
 export const ProfileName = styled.div`
   position: absolute;
   top: 24px;
-  left: 50px;
-  width: auto;
-
+  left: 10px;
+  width: 120px;
+  display: flex;
+  justify-content: flex-end;
   margin-right: 10px;
   text-transform: uppercase;
   font-weight: bold;

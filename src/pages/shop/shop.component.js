@@ -10,6 +10,7 @@ const ShopPage = ({ match }) => {
   const dispatch = useDispatch();
 
   dispatch(fetchCollectionsStart());
+  
 
     return (
       <div className='shop-page'>
