@@ -9,8 +9,7 @@ import CollectionPageContainer from '../collection/collection.container';
 const ShopPage = ({ match }) => {
   const dispatch = useDispatch();
 
-  dispatch(fetchCollectionsStart());
-  
+  dispatch(fetchCollectionsStart());  
 
     return (
       <div className='shop-page'>

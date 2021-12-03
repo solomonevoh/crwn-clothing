@@ -27,15 +27,15 @@ export const OptionsContainer = styled.div`
 
 export const ProfileName = styled.div`
   position: absolute;
-  top: 24px;
-  left: 10px;
-  width: 120px;
+  width: 200px;
   display: flex;
-  justify-content: flex-end;
-  margin-right: 10px;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 20px;
+  right: 260px;
+  top: 3.5px;
   text-transform: uppercase;
   font-weight: bold;
-  cursor: none;
 `;
 
 export const OptionLink = styled(Link)`
