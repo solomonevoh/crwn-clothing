@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
+import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selector';
 
 import './checkout.styles.scss';
@@ -9,6 +9,7 @@ import './checkout.styles.scss';
 const CheckoutPage = () => {
   const cartItems = useSelector(selectCartItems);
   const total = useSelector(selectCartTotal);
+
   return (
   <div className='checkout-page'>
     <div className='checkout-header'>
@@ -28,11 +29,9 @@ const CheckoutPage = () => {
         <span>Remove</span>
       </div>
     </div>
-      {
-        cartItems.map(cartItem =>
-          <CheckoutItem ket={cartItem.id} cartItem={cartItem} />
-        )
-      }
+    {cartItems.map((cartItem) => (
+      <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+    ))}
       <div className='total'>
         <span>TOTAL: ${total}</span>
       </div>
